@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Bean | Coffee Containers</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/cont.css">
+
+</head>
+<header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Coffee Bean</a>
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="home.html">home</a>
+            <a href="home.html">category</a>
+            <a href="home.html">product</a>
+            <a href="home.html">deal</a>
+            <a href="home.html">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="cart" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="/profile" class="fas fa-user-circle"></a>
+        </div>
+
+    </div>
+<body>
+<section class="category" id="category" form action="cont">
+
+    <h1 class="heading"><span>COFFEE CONTAINERS</span></h1>
+
+    <div class="box-container">
+        <% items.forEach(function(image) { %>
+        <div class="box">
+            
+                
+            <h3><%= image.name %></h3>
+            <img src="data:image/<%=image.img.contentType%>;base64,
+                             <%=image.img.data.toString('base64')%>" alt="">      
+                <h1>name:<%= image.name %></h1>
+                <p><%= image.desc %></p>
+                <h2>Rs.<%= image.price %></h2>
+  
+                <form action="addcart" method="post">
+                    <input type="hidden" name="price" id="price" value="<%=image.price%>">
+                    <input type="hidden" name="id" id="id" value="<%=image.id%>">
+                    <input type="hidden" name="name" id="name" value="<%=image.name%>">
+                    <input type="number" name="qty" id="qty" class="qty" min="1" max="99" value="1" onkeypress="if(this.value.length == 2) return false;">
+                    
+                
+                <input type="submit" value="Shop Now" class="btn" name="submit">
+            </form>
+            </div>
+        <% }) %>
+        
+        
+
+    </div>
+
+</section>
+</body>
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <form action="message" method="post">
+
+        <div class="inputBox">
+            <input type="text" id="name" name="name" placeholder="name">
+            <input type="email" id="email" name="email"  placeholder="email">
+        </div>
+
+        <div class="inputBox">
+            <input type="number"id="number" name="number"  placeholder="number">
+            <input type="text"id="subject" name="subject" placeholder="subject">
+        </div>
+
+        <textarea placeholder="message" name="mess" id="mess" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="send message" class="btn">
+
+    </form>
+
+</section>
+
+<!-- contact section ends -->
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Coffee Bean</a>
+            <p>Crake your Bean</p>
+            
+        </div>
+        
+        <div class="box">
+            <h3>our location</h3>
+            <div class="links">
+                <a href="#">ooty</a>
+                <a href="#">coimbatore</a>
+                <a href="#">salem</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <div class="links">
+                <a href="#home">home</a>
+                <a href="#category">category</a>
+                <a href="#product">product</a>
+                <a href="#deal">deal</a>
+                <a href="#contact">contact</a>
+            </div>
+        </div>
+
+       
+
+    </div>
+
+    <h1 class="credit"> created by <span> D </span> | all rights reserved! </h1>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="home.js"></script>
+    
+</body>
+</html>
+

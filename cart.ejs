@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Bean</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/cart.css">
+
+</head>
+<body>
+
+
+
+<header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Coffee Bean</a>
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="home.html">home</a>
+            <a href="home.html">category</a>
+            <a href="home.html">product</a>
+            <a href="home.html">deal</a>
+            <a href="home.html">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="cart" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="/profile" class="fas fa-user-circle"></a>
+        </div>
+
+    </div>
+
+</header>
+     
+<section class="product" id="product">
+
+<h1 class="heading">shopping <span>cart</span></h1>
+
+     </div>
+     
+     <section class="products">
+     
+        <h1 class="title">your cart</h1>
+     
+         
+            <div class="cart-total">
+              
+                 
+               <p>Grand Total : <span><%=total%></span></p>
+               <a href="checkout.html" class="btn">Place Order</a>
+              
+               </div>
+            </div>
+         
+              
+               <div class="box-container">
+            
+                  <% items.forEach(function(image) { %>
+                     <form action="cartbtn" method="post" class="box">
+                     <a href="cart" class="cat"></a>
+                 
+                  <button class="fas fa-times" type="submit" name="delete" onclick="return confirm('delete this item?')"></button>
+                  <img src="data:image/<%=image.img.contentType%>;base64,
+                  <%=image.img.data.toString('base64')%>"alt="">
+                  
+                  <div class="name"><%= image.name %></div>
+                  <div class="flex">
+                     <div class="price"><span>Rs.</span><%= image.price %><span>/-</span></div>
+                     <input type="hidden" name="sid" id="sid" value="<%=image.id%>">
+                     
+                  </form>
+                  
+                     <form action="edit" method="post" class="box">
+                     <input type="hidden" name="id" id="id" value="<%=image.id%>">
+                     <input type="hidden" name="price" id="price" value="<%=image.price%>">
+                     
+                     <button type="submit" class="fas fa-edit"></button>
+                     </form>
+                  </div>
+               
+                  <% }) %>
+                  
+                 
+               </div>
+               
+         
+             
+        
+         
+            
+         
+         </section>
+         
+         
+     <!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <form action="">
+
+        <div class="inputBox">
+            <input type="text" placeholder="name">
+            <input type="email" placeholder="email">
+        </div>
+
+        <div class="inputBox">
+            <input type="number" placeholder="number">
+            <input type="text" placeholder="subject">
+        </div>
+
+        <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="send message" class="btn">
+
+    </form>
+
+</section>
+
+<!-- contact section ends -->
+
+     <section class="footer">
+
+        <div class="box-container">
+    
+            <div class="box">
+                <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Coffee Bean</a>
+                <p>Crake your Bean</p>
+                
+            </div>
+            
+            <div class="box">
+                <h3>our location</h3>
+                <div class="links">
+                    <a href="#">ooty</a>
+                    <a href="#">coimbatore</a>
+                    <a href="#">salem</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>quick links</h3>
+                <div class="links">
+                    <a href="#">home</a>
+                    <a href="#">category</a>
+                    <a href="#">product</a>
+                    <a href="#">deal</a>
+                    <a href="#">contact</a>
+                </div>
+            </div>
+    
+           
+    
+        </div>
+    
+        <h1 class="credit"> created by <span> D </span> | all rights reserved! </h1>
+    
+    </section>
+    
+    <!-- footer section ends -->
+    
+    
+    </body>
+    </html>
+     
+     
+     
+     
+     
+     
+     

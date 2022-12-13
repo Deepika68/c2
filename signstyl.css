@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'sans-serif';
+    background-image: url('../images/pexel3.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.center h1{
+    color: rgb(239, 240, 224);
+    text-align: center;
+    padding-top: 15px;
+}
+.center form{
+    width: 70%;
+    margin-left: 30px;
+    height: fit-content;
+}
+.center form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 20px;  
+    font-family: 'bold'; 
+    color: #fff; 
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background:transparent;
+    outline: none;
+
+}
+input[type="button"]{
+    width: 320px;
+    height: 35px;
+    margin-top: 30px;
+    border: none;
+    background:rgba(151, 113, 8, 0.541);
+    color: #fff;
+    font-size: 18px;
+}
+
+p{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    color:#fff
+}
+.para a{
+        color: rgba(235, 241, 236, 0.944);
+        text-decoration: none;
+}
